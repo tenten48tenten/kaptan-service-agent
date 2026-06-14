@@ -7,9 +7,13 @@ const socialHunter = require('./social-hunter');
 const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
 const geminiApiKey = process.env.GEMINI_API_KEY;
 
-if (!telegramToken || !geminiApiKey) {
-    console.error("Hata: TELEGRAM_BOT_TOKEN veya GEMINI_API_KEY .env dosyasında eksik!");
+if (!telegramToken) {
+    console.error("Hata: TELEGRAM_BOT_TOKEN .env dosyasında eksik!");
     process.exit(1);
+}
+
+if (!geminiApiKey) {
+    console.warn("Uyarı: GEMINI_API_KEY eksik. AI yanıtları devre dışı, ancak komutlar çalışacak.");
 }
 
 // Gemini İstemcisi Başlatma
@@ -58,18 +62,21 @@ async function handleMessage(message) {
     }
 
     if (text.startsWith('/sosyal') || text.startsWith('/taramayap')) {
-        await sendTelegramMessage(chatId, "⚓ Sosyal medya ve platformlar taranıyor, lütfen bekleyin...");
+        await sendTelegramMessage(chatId, "⚓ Sosyal medya ve platformlar taranıyor, lütfen bekleyin (~20sn)...");
         try {
-            const [jobs, socialLeads] = await Promise.all([
-                indeedHunter.getFethiyeJobs().catch(err => {
-                    console.error('Indeed hunter error:', err);
-                    return [];
-                }),
-                socialHunter.getSocialLeads().catch(err => {
-                    console.error('Social hunter error:', err);
-                    return [];
-                })
-            ]);
+            // Run with a 20-second safety timeout
+            const withTimeout = (promise, ms) => {
+                const timer = new Promise(resolve => setTimeout(() => resolve([[], []]), ms));
+                return Promise.race([promise, timer]);
+            };
+
+            const [jobs, socialLeads] = await withTimeout(
+                Promise.all([
+                    indeedHunter.getFethiyeJobs().catch(() => []),
+                    socialHunter.getSocialLeads().catch(() => [])
+                ]),
+                20000
+            );
 
             let reply = `⚓ *ANLIK TARAMA SONUÇLARI*\n`;
             reply += `📅 *Saat:* ${new Date().toLocaleTimeString('tr-TR', {hour: '2-digit', minute:'2-digit'})}\n`;
@@ -83,17 +90,13 @@ async function handleMessage(message) {
             } else {
                 const displayLeads = socialLeads.slice(0, 10);
                 displayLeads.forEach((lead, index) => {
-                    reply += `${index + 1}️⃣ *Platform:* ${lead.platform}\n`;
-                    reply += `📌 *Başlık:* ${lead.title}\n`;
-                    reply += `🔗 [Bağlantı Git](${lead.url})\n`;
-                    if (lead.snippet) {
-                        reply += `📝 *Detay:* _${lead.snippet}_\n`;
-                    }
+                    reply += `${index + 1}. Platform: ${lead.platform}\n`;
+                    reply += `Başlık: ${lead.title}\n`;
+                    reply += `${lead.url}\n`;
                     reply += `──────────────────\n`;
                 });
                 if (socialLeads.length > 10) {
-                    reply += `➕ ve ${socialLeads.length - 10} diğer talep daha bulundu.\n`;
-                    reply += `──────────────────\n`;
+                    reply += `+${socialLeads.length - 10} diğer talep daha bulundu.\n`;
                 }
                 reply += `\n`;
             }
@@ -105,11 +108,8 @@ async function handleMessage(message) {
                 reply += `──────────────────`;
             } else {
                 jobs.forEach((job, index) => {
-                    reply += `${index + 1}️⃣ *İlan:* ${job.title}\n`;
-                    reply += `🔗 [Detayları Gör](${job.url})\n`;
-                    if (job.snippet) {
-                        reply += `📝 *Özet:* _${job.snippet}_\n`;
-                    }
+                    reply += `${index + 1}. İlan: ${job.title}\n`;
+                    reply += `${job.url}\n`;
                     reply += `──────────────────\n`;
                 });
             }
