@@ -251,4 +251,11 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Kaptan Service Server running on port ${PORT}`);
     startScheduler();
+    
+    // Start Telegram Bot
+    try {
+        require('./telegram-bot');
+    } catch (err) {
+        console.error("Telegram bot başlatılamadı:", err.message);
+    }
 });
