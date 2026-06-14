@@ -180,11 +180,29 @@ app.get('/api/trigger-report', async (req, res) => {
 
 // Route to manually trigger social media crawling
 app.get('/api/trigger-social', async (req, res) => {
+    let responded = false;
+
+    // Safety timeout: respond after 25 seconds no matter what
+    const timeout = setTimeout(() => {
+        if (!responded) {
+            responded = true;
+            res.status(200).json({ success: true, count: 0, message: 'Arama zaman aşımına uğradı (25s). Railway ağı DuckDuckGo bağlantısını engelliyor olabilir.', data: [] });
+        }
+    }, 25000);
+
     try {
         const results = await socialHunter.getSocialLeads();
-        res.status(200).json({ success: true, count: results.length, data: results });
+        clearTimeout(timeout);
+        if (!responded) {
+            responded = true;
+            res.status(200).json({ success: true, count: results.length, data: results });
+        }
     } catch (err) {
-        res.status(500).json({ success: false, error: err.message });
+        clearTimeout(timeout);
+        if (!responded) {
+            responded = true;
+            res.status(500).json({ success: false, error: err.message });
+        }
     }
 });
 
