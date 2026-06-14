@@ -1,0 +1,64 @@
+========================================================================
+             KAPTAN SERVİS AJANI - KURULUM VE KULLANIM REHBERİ
+========================================================================
+
+Bu klasör, Muğla genelinde (Fethiye, Göcek, Dalaman & Ortaca) Boya, Güvenlik Kamerası ve Bilgisayar Servisi işleriniz için geliştirilen Çok Dilli Web Sitesi ve AI Karşılama Ajanı dosyalarını içermektedir.
+
+------------------------------------------------------------------------
+1. DOSYA YAPISI
+------------------------------------------------------------------------
+* index.html       -> Türkçe, İngilizce ve Rusça dillerinde SEO uyumlu web sitesi.
+* style.css        -> Premium karanlık tema, neon efektler ve sohbet kutusu tasarımı.
+* script.js        -> Dil geçişleri ve AI müşteri ön eleme sohbet robotu akışı.
+* server.js        -> Ücretsiz sunucuda (Render) çalışacak Express.js sunucusu.
+* package.json     -> Gerekli kütüphaneler.
+* .env             -> Telegram ve API anahtarı ayarlarınızın bulunacağı dosya.
+* .env.example     -> Örnek ayar dosyası.
+
+------------------------------------------------------------------------
+2. LOKALDE ÇALIŞTIRMA (BİLGİSAYARINIZDA)
+------------------------------------------------------------------------
+Web sitesini doğrudan test etmek için sunucuya ihtiyacınız yoktur:
+* Klasörün içindeki "index.html" dosyasına çift tıklayarak tarayıcınızda açıp tüm dilleri ve sohbet akışını test edebilirsiniz.
+
+Eğer Node.js kurduktan sonra yerel sunucuyu başlatmak isterseniz:
+1. Bilgisayarınıza Node.js yükleyin (https://nodejs.org/).
+2. Bu klasörün içinde PowerShell veya Komut İstemi açın.
+3. Şu komutları sırasıyla çalıştırın:
+   > npm install
+   > npm start
+4. Tarayıcınızdan "http://localhost:3000" adresine giderek sistemi görebilirsiniz.
+
+------------------------------------------------------------------------
+3. ÜCRETSİZ SUNUCUYA (BULUTA) KURULUM REHBERİ
+------------------------------------------------------------------------
+
+A. WEB SİTESİNİN ÜCRETSİZ YAYINLANMASI (VERCEL)
+1. https://vercel.com/ sitesine ücretsiz üye olun.
+2. GitHub hesabınızı bağlayın veya bu klasörü Vercel CLI yardımıyla yükleyin.
+3. Siteniz "kaptan-services.vercel.app" gibi bir adreste 7/24 ücretsiz yayına girer.
+
+B. AI BOT VE BİLDİRİM SUNUCUSUNUN KURULMASI (RENDER)
+1. https://render.com/ adresine ücretsiz üye olun.
+2. "New Web Service" seçin ve kodlarınızı (GitHub üzerinden) bağlayın.
+3. Çevresel Değişkenler (Environment Variables) kısmına `.env` dosyasındaki bilgileri girin:
+   - TELEGRAM_BOT_TOKEN
+   - TELEGRAM_CHAT_ID
+4. Render sunucusu projeyi otomatik olarak kurup 7/24 çalıştıracaktır.
+
+------------------------------------------------------------------------
+4. TELEGRAM BİLDİRİMLERİNİ TELEFONUNUZA BAĞLAMA (ÜCRETSİZ)
+------------------------------------------------------------------------
+Müşteri sitenize girip sohbeti tamamladığında doğrudan telefonunuza bildirim gelmesi için:
+1. Telegram uygulamasını açın.
+2. Arama çubuğuna "@BotFather" yazın ve resmi botu başlatın.
+3. BotFather'a "/newbot" yazın ve botunuza bir isim (Örn: KaptanServisBot) verin.
+4. BotFather size bir API Token verecektir (TELEGRAM_BOT_TOKEN). Bu kodu kaydedin.
+5. Şimdi Telegram'da "@userinfobot" araması yapıp başlatın. Size ID numaranızı verecektir (TELEGRAM_CHAT_ID).
+6. Bu iki bilgiyi `.env` dosyanıza veya Render sunucusu ayarlarına girin.
+7. Oluşturduğunuz botu Telegram'da aratıp "/start" tuşuna basarak aktifleştirin.
+
+Artık web sitenizden gelen her müşteri talebi anında telefonunuza Telegram üzerinden bildirim olarak düşecektir!
+
+Hayırlı işler, bol kazançlar dileriz!
+========================================================================

@@ -1,0 +1,6 @@
+node_modules/
+.env
+test-social-hunter.js
+AJANI_CALISTIR_VE_TEST_ET.bat
+walkthrough.md
+*.log

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title id="meta-title">Fethiye Teknik Servis | CCTV Kamera Kurulum & Bilgisayar Servisi</title>
+    <meta name="description" id="meta-desc" content="Fethiye, Göcek, Dalaman ve Ortaca'da profesyonel güvenlik kamerası kurulumu ve bilgisayar teknik servis hizmetleri. Hızlı, güvenilir ve uygun fiyatlı çözümler.">
+    <meta name="keywords" id="meta-keywords" content="fethiye güvenlik kamerası, fethiye bilgisayar tamiri, fethiye cctv, dalaman kamera kurulum, fethiye bilgisayar servisi, fethiye teknik servis, ремонт компьютеров фетхие">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fethiyekaptanbilisimteknolojileri.com.tr/">
+    <meta property="og:title" content="Fethiye Teknik Servis | Kamera & Bilgisayar Servisi">
+    <meta property="og:description" content="Fethiye, Göcek, Dalaman ve Ortaca genelinde profesyonel güvenlik kamerası kurulumu ve bilgisayar teknik servisi.">
+    <meta property="og:image" content="https://fethiyekaptanbilisimteknolojileri.com.tr/Kaptan_Services_Flyer.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fethiyekaptanbilisimteknolojileri.com.tr/">
+    <meta property="twitter:title" content="Fethiye Teknik Servis | Kamera & Bilgisayar Servisi">
+    <meta property="twitter:description" content="Fethiye, Göcek, Dalaman ve Ortaca genelinde profesyonel güvenlik kamerası kurulumu ve bilgisayar teknik servisi.">
+    <meta property="twitter:image" content="https://fethiyekaptanbilisimteknolojileri.com.tr/Kaptan_Services_Flyer.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Kaptan_Services_Flyer.png">
+    <link rel="apple-touch-icon" href="Kaptan_Services_Flyer.png">
+
+    <!-- Local Business Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Fethiye Teknik Servis",
+      "image": "https://fethiyekaptanbilisimteknolojileri.com.tr/Kaptan_Services_Flyer.png",
+      "@id": "https://fethiyekaptanbilisimteknolojileri.com.tr/#website",
+      "url": "https://fethiyekaptanbilisimteknolojileri.com.tr/",
+      "telephone": "+905524785273",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Fethiye Merkez",
+        "addressLocality": "Fethiye",
+        "addressRegion": "Muğla",
+        "postalCode": "48300",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "36.6219",
+        "longitude": "29.1164"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "22:00"
+      },
+      "sameAs": [
+        "https://wa.me/905524785273"
+      ],
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Fethiye"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Göcek"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Dalaman"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Ortaca"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Animated Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+    <!-- Background Glows -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+
+    <!-- TOP PHONE BAR -->
+    <div class="top-phone-bar">
+        <div class="container top-phone-inner">
+            <div class="top-phone-left">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Fethiye · Göcek · Dalaman · Ortaca</span>
+            </div>
+            <div class="top-phone-right">
+                <a href="tel:+905321234567" class="top-phone-link" id="top-phone-link">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span id="top-phone-number">0532 123 45 67</span>
+                </a>
+                <a href="https://wa.me/905321234567" class="top-wa-link" target="_blank" id="top-wa-link">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container navbar">
+            <div class="logo" id="logo-text">
+                <i class="fa-solid fa-anchor logo-icon"></i> FETHİYE <span class="accent-text">TEKNİK SERVİS</span>
+            </div>
+            
+            <div class="nav-right">
+                <!-- Language Switcher -->
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="tr">TR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                </div>
+                <a href="tel:+905321234567" class="btn-call-header" id="nav-call-btn">
+                    <i class="fa-solid fa-phone"></i> <span id="nav-phone-txt">Hemen Ara</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="tagline" data-i18n="hero_tagline">⭐ Güvenilir & Hızlı Yerel Teknik Hizmet</div>
+                <h1 id="hero-title">
+                    Fethiye'de <span class="gradient-text">Güvenlik Kamerası</span><br>& Bilgisayar Teknik Servisi
+                </h1>
+                <p class="lead-text" id="hero-desc">
+                    Güvenlik kamerası kurulumu, bilgisayar arızaları ve ağ sorunlarınız için uzman kadromuzla yanınızdayız. Hızlı müdahale, garantili işçilik.
+                </p>
+
+                <!-- BIG PHONE CALL BANNER -->
+                <div class="hero-phone-banner">
+                    <div class="hero-phone-content">
+                        <div class="hero-phone-icon-wrap">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div class="hero-phone-info">
+                            <span class="hero-phone-label" data-i18n="call_now_label">Hemen Arayın</span>
+                            <a href="tel:+905321234567" class="hero-phone-number" id="hero-phone-number">0532 123 45 67</a>
+                        </div>
+                        <a href="https://wa.me/905321234567" class="hero-wa-btn" target="_blank" id="hero-wa-btn">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span data-i18n="whatsapp_btn">WhatsApp'ta Yaz</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <button class="btn-primary start-chat-trigger" id="hero-cta-btn">
+                        <i class="fa-regular fa-comments"></i> <span data-i18n="hero_cta">Teklif Al</span>
+                    </button>
+                    <a href="#services" class="btn-secondary" id="hero-secondary-btn">
+                        <span data-i18n="hero_secondary">Hizmetlerimiz</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-badge-container">
+                <div class="service-quick-cards">
+                    <div class="quick-card">
+                        <i class="fa-solid fa-video card-icon camera"></i>
+                        <h4 data-i18n="service_camera_title">Güvenlik Kamerası</h4>
+                        <p data-i18n="service_camera_desc">HD CCTV, IP kamera, uzaktan mobil izleme kurulumu.</p>
+                    </div>
+                    <div class="quick-card">
+                        <i class="fa-solid fa-laptop-code card-icon computer"></i>
+                        <h4 data-i18n="service_pc_title">Bilgisayar Tamiri</h4>
+                        <p data-i18n="service_pc_desc">Yazılım, donanım ve ağ/Wi-Fi sorunlarına hızlı çözüm.</p>
+                    </div>
+                    <div class="quick-card">
+                        <i class="fa-solid fa-wifi card-icon wifi"></i>
+                        <h4 data-i18n="service_net_title">Ağ & Wi-Fi Kurulum</h4>
+                        <p data-i18n="service_net_desc">Villa ve işyerleri için güçlü Mesh Wi-Fi altyapısı.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="services_header_title">Hizmetlerimiz</h2>
+                <p data-i18n="services_header_subtitle">Fethiye, Göcek, Dalaman, Ortaca ve Muğla genelinde sunduğumuz profesyonel teknik hizmetler</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-detail-card">
+                    <div class="card-image-placeholder camera-bg">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 data-i18n="detail_camera_title">Güvenlik Kamerası & CCTV</h3>
+                        <p data-i18n="detail_camera_desc">Evinizi ve iş yerinizi cep telefonunuzdan 7/24 izleyin. IP kamera, analog HD ve kablosuz güvenlik kamerası çözümlerimizle huzur bulun.</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check text-accent"></i> <span data-i18n="detail_camera_item1">Uzaktan mobilden canlı izleme kurulumu</span></li>
+                            <li><i class="fa-solid fa-check text-accent"></i> <span data-i18n="detail_camera_item2">Gece görüşlü ve hareket sensörlü kameralar</span></li>
+                            <li><i class="fa-solid fa-check text-accent"></i> <span data-i18n="detail_camera_item3">Yıllık bakım ve arıza giderme desteği</span></li>
+                        </ul>
+                        <a href="tel:+905321234567" class="card-cta-btn" id="card-call-1">
+                            <i class="fa-solid fa-phone"></i> <span data-i18n="card_call_btn">Bilgi Al</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-detail-card">
+                    <div class="card-image-placeholder computer-bg">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 data-i18n="detail_pc_title">Bilgisayar & Ağ Teknolojileri</h3>
+                        <p data-i18n="detail_pc_desc">Yavaşlayan bilgisayarlar, çöken sistemler, Wi-Fi çekim problemleri veya veri kurtarma ihtiyaçlarınız için hızlı servis.</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check text-accent"></i> <span data-i18n="detail_pc_item1">Windows / MacOS kurulumu ve virüs temizleme</span></li>
+                            <li><i class="fa-solid fa-check text-accent"></i> <span data-i18n="detail_pc_item2">Büyük villalar için Wi-Fi sinyal güçlendirme (Mesh)</span></li>
+                            <li><i class="fa-solid fa-check text-accent"></i> <span data-i18n="detail_pc_item3">Donanım yükseltme (SSD ve RAM montajı)</span></li>
+                        </ul>
+                        <a href="tel:+905321234567" class="card-cta-btn" id="card-call-2">
+                            <i class="fa-solid fa-phone"></i> <span data-i18n="card_call_btn">Bilgi Al</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-detail-card">
+                    <div class="card-image-placeholder paint-bg">
+                        <i class="fa-solid fa-fill-drip"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3 data-i18n="detail_paint_title">İç & Dış Cephe Boyama</h3>
+                        <p data-i18n="detail_paint_desc">Villalarınız ve evleriniz için en kaliteli markalarla (Jotun, Filli Boya) temiz işçilik sunuyoruz. Eşyalarınızı özenle korur, tertemiz teslim ederiz.</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check text-accent"></i> <span data-i18n="detail_paint_item1">Detaylı yüzey hazırlığı ve astar</span></li>
+                            <li><i class="fa-solid fa-check text-accent"></i> <span data-i18n="detail_paint_item2">Rutubet ve çatlak onarımı</span></li>
+                            <li><i class="fa-solid fa-check text-accent"></i> <span data-i18n="detail_paint_item3">Bahçe duvarı ve dış cephe boyama</span></li>
+                        </ul>
+                        <a href="tel:+905321234567" class="card-cta-btn" id="card-call-3">
+                            <i class="fa-solid fa-phone"></i> <span data-i18n="card_call_btn">Bilgi Al</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+        <div class="container text-center">
+            <h2 data-i18n="why_us_title">Neden Biz?</h2>
+            <div class="why-us-grid">
+                <div class="why-card">
+                    <i class="fa-solid fa-bolt icon-why"></i>
+                    <h3 data-i18n="why_time_title">Hızlı Müdahale</h3>
+                    <p data-i18n="why_time_desc">Fethiye, Göcek, Dalaman ve Ortaca genelinde arızalarınıza en kısa sürede dönüş sağlıyoruz.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-award icon-why"></i>
+                    <h3 data-i18n="why_quality_title">Garantili İşçilik</h3>
+                    <p data-i18n="why_quality_desc">Kullandığımız malzemeler ve yaptığımız tüm kurulumlar firmamızın garantisi altındadır.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fa-solid fa-language icon-why"></i>
+                    <h3 data-i18n="why_lang_title">Çok Dilli Destek</h3>
+                    <p data-i18n="why_lang_desc">İngilizce, Rusça ve Türkçe konuşuyoruz. Yabancı müşterilerimizle doğrudan kendi dillerinde anlaşıyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section class="locations-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="locations_title">Hizmet Bölgelerimiz</h2>
+                <p data-i18n="locations_subtitle">Fethiye ve çevre ilçelerdeki tüm mahalle ve beldelere hızlı servis sağlıyoruz</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <h3 data-i18n="loc_cat1_title">Fethiye Merkez & Mahalleleri</h3>
+                    <ul>
+                        <li>Fethiye Merkez</li>
+                        <li>Çalış & Foça</li>
+                        <li>Taşyaka & Babataşı</li>
+                        <li>Akarca & Pazaryeri</li>
+                        <li>Tuzla & Karagözler</li>
+                    </ul>
+                </div>
+                <div class="location-card">
+                    <h3 data-i18n="loc_cat2_title">Fethiye Çevresi & Turistik Bölgeler</h3>
+                    <ul>
+                        <li>Ölüdeniz & Ovacık</li>
+                        <li>Hisarönü & Faralya</li>
+                        <li>Çiftlik & Kargı</li>
+                        <li>Yanıklar & Üzümlü</li>
+                        <li>Karaçulha & Eldirek</li>
+                    </ul>
+                </div>
+                <div class="location-card">
+                    <h3 data-i18n="loc_cat3_title">Çevre İlçeler & Beldeler</h3>
+                    <ul>
+                        <li>Göcek</li>
+                        <li>Dalaman</li>
+                        <li>Ortaca</li>
+                        <li>Dalyan</li>
+                        <li>Sarıgerme</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta-section">
+        <div class="container contact-cta-inner">
+            <div class="contact-cta-text">
+                <h2 data-i18n="cta_title">Hemen İletişime Geçin</h2>
+                <p data-i18n="cta_desc">Sorunuz mu var? Teklif mi almak istiyorsunuz? Sizi arayalım.</p>
+            </div>
+            <div class="contact-cta-btns">
+                <a href="tel:+905321234567" class="btn-big-call" id="cta-call-btn">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <div>
+                        <span class="btn-big-label" data-i18n="call_now_label">Hemen Arayın</span>
+                        <span class="btn-big-number" id="cta-phone-number">0532 123 45 67</span>
+                    </div>
+                </a>
+                <a href="https://wa.me/905321234567" class="btn-big-wa" target="_blank" id="cta-wa-btn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <span class="btn-big-label">WhatsApp</span>
+                        <span class="btn-big-number" data-i18n="whatsapp_btn">Mesaj Gönderin</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content text-center">
+            <div class="footer-logo">
+                <i class="fa-solid fa-anchor"></i> FETHİYE TEKNİK SERVİS
+            </div>
+            <p class="footer-phone"><a href="tel:+905321234567" id="footer-phone-link">📞 0532 123 45 67</a></p>
+            <p class="footer-subtext" data-i18n="footer_sub">Fethiye, Göcek, Dalaman, Ortaca ve Muğla Çevresi Yetkili Teknik Servis Sağlayıcısı</p>
+            <p class="footer-copy">&copy; 2026 Fethiye Teknik Servis. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <a href="tel:+905321234567" class="fab fab-call" id="fab-call" title="Hemen Ara">
+            <i class="fa-solid fa-phone"></i>
+            <span class="fab-label" data-i18n="fab_call">Ara</span>
+        </a>
+        <a href="https://wa.me/905321234567" class="fab fab-wa" id="fab-wa" target="_blank" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="fab-label">WhatsApp</span>
+        </a>
+        <button class="fab fab-chat start-chat-trigger" id="fab-chat" title="AI Asistan">
+            <i class="fa-solid fa-comments"></i>
+            <span class="fab-label" data-i18n="fab_chat">Teklif</span>
+        </button>
+    </div>
+
+    <!-- Floating Chat Widget -->
+    <div class="chat-widget" id="chat-widget">
+        <!-- Chat Window -->
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div class="chat-header-left">
+                    <i class="fa-solid fa-anchor header-icon"></i>
+                    <div>
+                        <h4 id="bot-name">Fethiye Teknik Servis AI</h4>
+                        <span class="status-online"><span class="dot"></span> <span data-i18n="bot_status">Çevrimiçi (Destek)</span></span>
+                    </div>
+                </div>
+                <button class="chat-close" id="chat-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <div class="message system-msg">
+                    <span data-i18n="chat_welcome_meta">Kaptan AI Ajanı bağlandı. Diliniz otomatik algılanacaktır.</span>
+                </div>
+                <div class="message bot-msg">
+                    <p data-i18n="chat_welcome">Merhaba! Kaptan Bilişim'e hoş geldiniz. Güvenlik kamerası kurulumu veya bilgisayar arızaları konusunda destek sunuyoruz. Size nasıl yardımcı olabilirim?</p>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Mesajınızı yazın..." data-i18n-placeholder="chat_placeholder">
+                <button id="chat-send"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Multi-language script file -->
+    <script src="script.js?v=2.0"></script>
+    <!-- Animated Background -->
+    <script src="bg-animation.js"></script>
+</body>
+</html>
