@@ -1,4 +1,5 @@
 const URL = require('url').URL;
+const fetch = require('node-fetch');
 
 // Helper to strip HTML tags
 function cleanHtml(text) {
